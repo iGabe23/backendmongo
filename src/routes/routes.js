@@ -9,10 +9,10 @@ const router = Router();
 //el enrutador se encarga de manejar las rutas CRUD o solucitudes del cliente
 router.post("/", Controller.create);
 router.get("/", Controller.readAll);
-router.get("/:id", Controller.read);
+router.get("/recipe/:id", Controller.read);
+router.get("/user/:id", Controller.readAllByUserId);
 router.put("/:id", Controller.update);
 router.delete("/:id", Controller.delete);
-
 
 //exportar el enrutador
 export default router;
