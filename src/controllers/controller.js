@@ -36,7 +36,7 @@ const Controller = {
       //Si algo sale mal entonces responde así
       res.json({
         result: "bad",
-        message: "Something went wrong",
+        message: "Something went wrong at creating a new recipe",
         data: error,
       });
     }
@@ -48,7 +48,7 @@ const Controller = {
       const recipe = await Model.findById(request.params.id);
       response.json({
         result: "good",
-        message: "Reading Recipe!",
+        message: "Reading single Recipe!",
         data: {
           id: recipe._id,
           name: recipe.name,
@@ -65,7 +65,7 @@ const Controller = {
     } catch (error) {
       response.json({
         result: "bad",
-        message: "something went wrong",
+        message: "something went wrong at reading single recipe by id",
         data: error,
       });
     }
@@ -96,13 +96,14 @@ const Controller = {
             time: recipe.time,
             tags: recipe.tags,
             notes: recipe.notes,
+            fav: recipe.fav,
           })),
         });
       }
     } catch (error) {
       response.json({
         result: "bad",
-        message: "something went wrong",
+        message: "something went wrong at reading all recipes by user id",
         data: error,
       });
     }
@@ -126,7 +127,7 @@ const Controller = {
     } catch (error) {
       response.json({
         result: "bad",
-        message: "something went wrong",
+        message: "something went wrong at reading all recipes",
         data: error,
       });
     }
@@ -148,7 +149,7 @@ const Controller = {
     } catch (error) {
       response.json({
         result: "bad",
-        message: "something went wrong",
+        message: "something went wrong at updating a recipe",
         data: error,
       });
     }
@@ -167,7 +168,7 @@ const Controller = {
     } catch (error) {
       response.json({
         result: "bad",
-        message: "something went wrong",
+        message: "something went wrong at deleting your recipe",
         data: error,
       });
     }

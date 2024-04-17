@@ -16,6 +16,7 @@ const schemaRecipes = new Schema(
     time: { type: Number, required: false },
     tags: { type: String, required: false },
     notes: { type: String, required: false },
+    fav: { type: Boolean, require: false },
   },
   { versionKey: false, timestamps: true }
 );
